@@ -1,4 +1,4 @@
-Vending Machine (Mealy FSM)
+# Vending Machine (Mealy FSM)
 
 This project implements a Mealy Finite State Machine (FSM) vending machine in Verilog. The vending machine accepts coins of value 5 and 10 units, dispenses a product at 15 units, and returns change if needed.
 # Features
@@ -63,10 +63,13 @@ Generates waveform file:
 
 gtkwave vending_mealy.vcd
 
-Expected Monitor Output (snippet):
+## Expected Monitor Output (snippet):
 T=11 | state=00 | coin=01 | dispense=0 | chg5=0
+
 T=21 | state=01 | coin=00 | dispense=0 | chg5=0
+
 T=41 | state=10 | coin=00 | dispense=0 | chg5=0
+
 T=71 | state=00 | coin=00 | dispense=1 | chg5=0
 ...
 
