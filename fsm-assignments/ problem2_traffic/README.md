@@ -30,13 +30,17 @@ After the delay expires, the FSM transitions to the next state.
 ---
 
 ## Tick Generation
-The FSM needs a **1-second tick** to measure real-time delays.
 
-- `tick_divider.v` generates a **1 Hz pulse** from a 50 MHz clock.
-  - Counts clock cycles up to `50,000,000`
-  - Asserts `tick = 1` for **1 cycle** when the counter resets
-- The FSM increments an internal counter (`tick_count`) on each `tick`
-- When `tick_count == delay - 1`, the FSM changes state
+- In **hardware (top module)**:
+  The `tick_divider` module divides the 50 MHz system clock to generate a
+  1 Hz tick (1-second pulse). This tick drives the FSM’s internal timing.
+
+- In **simulation (testbench)**:
+  To avoid simulating millions of clock cycles, the testbench uses a
+  simplified tick generator (`tick <= (cyc % 20 == 0)`).
+  This produces a tick every 20 cycles of the simulation clock,
+  allowing fast verification while preserving the FSM’s behavior.
+
 
 This ensures **time-accurate traffic light switching**.
 
@@ -50,12 +54,6 @@ This ensures **time-accurate traffic light switching**.
    - Waveforms show correct light transitions:
      - NS Green → NS Yellow → EW Green → EW Yellow → repeat
      - Durations match delays (5 ticks for green, 2 ticks for yellow).
-
-2. **Tick Divider Verification:**
-   - In `tb_traffic_light`, `tick` pulses are monitored.
-   - Every rising edge of `tick` increments the FSM’s `tick_count`.
-   - When `tick_count` reaches its threshold (`delay`), FSM transitions to the next state.
-
 Thus, correctness is verified by:
 - **Cycle counting**
 - **Expected state transitions**
@@ -66,7 +64,9 @@ Thus, correctness is verified by:
 ##  Running Simulation
 1. Open a terminal and compile:
    iverilog -o traffic_light_tb traffic_light.v tick_divider.v top.v tb_traffic_light.v
+   
    vvp traffic_light_tb
+   
    gtkwave traffic_light_tb.vcd
 
 
