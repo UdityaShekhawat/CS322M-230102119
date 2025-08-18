@@ -36,12 +36,12 @@ R_ACK_HOLD → Assert ack for 2 cycles.
 
 R_WAIT_REQ0 → Wait for req to drop, then deassert ack.
 
-Simulation
+## Simulation
 Run with Icarus Verilog
 iverilog -o simout tb_link_top.v link_top.v slave_fsm.v master_fsm.v
 vvp simout
 
-Generate & View Waveforms
+## Generate & View Waveforms
 gtkwave link_wave.vcd
 
 
