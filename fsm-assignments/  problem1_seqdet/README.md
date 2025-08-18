@@ -21,12 +21,16 @@ One-hot would need 4 flip-flops.
 | -------------------- | ----------------------------------------- |
 | `1101`               | Pulse at **last bit** (index 3)           |
 | `1101101`            | **Two pulses** (overlap at indices 3,6)   |
-| `11101`              | Pulse when **last `1`** arrives (index 4) |
 | `01101101`           | **Two pulses** (indices 4,7)              |
+| `1101101101011001`   | three pulses[3, 6, 9]              |
+
+
 
 # How to run in  IcarusVerilog + GTKWave
  iverilog -o sim.out seq_detect_mealy.v tb_seq_detect_mealy
+ 
  vvp sim.out
+ 
  gtkwave dump.vcd
 
  
