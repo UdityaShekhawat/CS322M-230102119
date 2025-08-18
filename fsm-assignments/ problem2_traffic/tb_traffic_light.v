@@ -43,4 +43,10 @@ module tb_traffic_light;
         $finish;
     end
 
+    initial begin
+        $dumpfile("traffic_light_tb.vcd");   
+        $dumpvars(0, tb_traffic_light);      
+    end
+
 endmodule
+
