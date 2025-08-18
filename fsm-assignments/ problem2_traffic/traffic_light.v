@@ -1,4 +1,4 @@
- moduletraffic_light(
+ module traffic_light(
  input wire clk,
  input wire rst, //syncactive-high
  input wire tick, //1-cycle per-secondpulse
@@ -66,3 +66,4 @@
     end
 
 endmodule
+
