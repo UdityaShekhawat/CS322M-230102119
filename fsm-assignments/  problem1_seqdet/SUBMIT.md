@@ -1,5 +1,5 @@
 ###GITHUB URL
-https://github.com/UdityaShekhawat/CS322M-230102119
+https://github.com/UdityaShekhawat/CS322M-230102119/tree/main/fsm-assignments/%20%20problem1_seqdet
 
 # commit Hash 
 
