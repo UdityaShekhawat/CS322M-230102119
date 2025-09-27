@@ -354,7 +354,7 @@ module imem(input  logic [31:0] a,
   logic [31:0] RAM[63:0];
 
   initial
-      $readmemh("rvx10.txt",RAM);
+    $readmemh("rvx10.hex",RAM);
 
   assign rd = RAM[a[31:2]]; // word aligned
 endmodule
