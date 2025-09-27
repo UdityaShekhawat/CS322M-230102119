@@ -3,8 +3,9 @@
 
 # Test the RISC-V (RVX10_extended) processor.  
 
-##  add,sub, and, or, slt, addi, lw, sw, beq, jal
-## andn, orn,xnor, abs, ror, rol, min, minu, max, maxu 
+ add,sub, and, or, slt, addi, lw, sw, beq, jal
+ 
+ andn, orn,xnor, abs, ror, rol, min, minu, max, maxu 
 
 
 ## If successful, it should write the value 25 to address 100
