@@ -1,15 +1,17 @@
-//author: uditya_shekhawat_230102119
 
-# extended RVX10
-# Test the RISC-V processor.  
+
+
+# Test the RISC-V (RVX10_extended) processor.  
 
 ##  add,sub, and, or, slt, addi, lw, sw, beq, jal
 ## andn, orn,xnor, abs, ror, rol, min, minu, max, maxu 
+
+
 ## If successful, it should write the value 25 to address 100
 
 #       RISC-V Assembly         Description               Address   Machine Code
 
-main:   addi x2, x0, 5          # x2 = 5                  0         00500113
+        addi x2, x0, 5          # x2 = 5                  0         00500113
 																					
         addi x3, x0, 12         # x3 = 12                 4         00C00193
 		
@@ -29,7 +31,7 @@ main:   addi x2, x0, 5          # x2 = 5                  0         00500113
 		
         addi x5, x0, 0          # shouldn't happen        24        00000293
 		
-around: slt  x4, x7, x2         # x4 = (3 < 5)  = 1       28        0023A233
+        slt  x4, x7, x2         # x4 = (3 < 5)  = 1       28        0023A233
 
         add  x7, x4, x5         # x7 = (1 + 11) = 12      2C        005203B3
 		
@@ -101,6 +103,9 @@ around: slt  x4, x7, x2         # x4 = (3 < 5)  = 1       28        0023A233
 		
         sw   x2, 0x20(x3)       # mem[100] = 25          204        0221A023
 		
-done:   beq  x2, x2, done       # infinite loop          208        00210063
+        beq  x2, x2, done       # infinite loop          208        00210063
+
+
+author: uditya_shekhawat_230102119
 		
 		
