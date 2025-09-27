@@ -73,7 +73,4 @@ end
 
 ---
 
-## License / Credits
-
-This teaching setup is adapted for course use. Original single‑cycle RISC‑V example design is based on standard educational resources for RV32I.
 
