@@ -60,7 +60,7 @@
 		
         abs  x1, x0, x1         #x1=128                   5C        0600808B
 		
-        xnor x4, x1, x7         #x4=0xF78                 60        0070A20B
+        xnor x4, x1, x7         #x4=0xFFFFF74             60        0070A20B
 		
         addi x5, x0,2           # x5=2                    64        00200293
 		
@@ -90,7 +90,7 @@
 		
         MIN x1, x4, x7          #MIN(-10, -5) = -10       98        0272008B
 		
-        MINU x1, x4, x7         #MINU(-10, -5) = -10      9C        0272A08B
+        MINU x1, x4, x7         #MINU(-10, 20) = 20       9C        0272A08B
 		
         MAX x1, x4, x5          # MAX(-10, 20) = 20      100        0252108B
 		
